@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    border: 1px solid red; 
+    width: 600px;
+    height: 500px;
+    display: flex;
+
+    & .texts{
+        border: 1px solid green; 
+        width: 50%;
+        height: 100%;
+    }
+
+    & .images{
+        border: 1px solid green; 
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        
+        
+        & img {
+            animation-name: moveup; 
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            object-fit: cover;
+            height: 100%
+        }
+
+
+    }
+
+}
+
+
+
+@keyframes moveup {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    50% {
+        transform: translateY(-100%)
+    }
+
+    99% {
+        transform: translateY(00%)
+    }
+
+    100% {
+        transform: translateY(-200%)
+    }
+
+}
+
+@keyframes jumpup {
+    0%{
+        transform: translateY(0px)
+    }
+
+    100%{
+        transform: translateY(-300%)
+    }
+}
