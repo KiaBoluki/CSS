@@ -5,7 +5,6 @@
 }
 
 body{
-    perspective: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,64 +12,46 @@ body{
 }
 
 .container {
-    border: 1px solid red; 
-    width: 600px;
-    height: 500px;
-    display: flex;
-
-    & .texts{
-        border: 1px solid green; 
-        width: 50%;
-        height: 100%;
-    }
-
-    & .images{
-        border: 1px solid green; 
-        width: 50%;
-        height: 100%;
-        overflow: hidden;
-        
-        
-        & img {
-            animation-name: moveup; 
-            animation-duration: 6s;
-            animation-iteration-count: infinite;
-            object-fit: cover;
-            height: 100%
-        }
+    background-color: red;
+    height: 100px;
+    width: calc( 1400px - 10% );
+}
 
 
-    }
+#toggle{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
 
+#sp{
+    position: relative;
+}
+
+#sp::before{
+    display: block; 
+    width: 40px; 
+    height: 20px;
+    border-radius: 10px;
+    content: ''; 
+    background-color: #eee;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+#sp::after{
+    display: block; 
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+    content: ''; 
+    background-color: #0066ff;
+    position: absolute; 
+    top: 0;
+    left: 0;
 }
 
 
 
-@keyframes moveup {
-    0% {
-        transform: translateY(-200%);
-    }
-
-    50% {
-        transform: translateY(-100%)
-    }
-
-    99% {
-        transform: translateY(00%)
-    }
-
-    100% {
-        transform: translateY(-200%)
-    }
-
-}
-
-@keyframes jumpup {
-    0%{
-        transform: translateY(0px)
-    }
-
-    100%{
-        transform: translateY(-300%)
-    }
-}
